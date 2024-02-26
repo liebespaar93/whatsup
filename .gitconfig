@@ -1,0 +1,11 @@
+[core]
+        editor= code --wait
+[user]
+        name = liebespaar93
+        email = 82822684+liebespaar93@users.noreply.github.com
+        signingkey = xxx
+[commit]
+        template = .gitmessage.txt
+        gpgsign = true
+[gpg]
+        program = /usr/local/bin/gpg
