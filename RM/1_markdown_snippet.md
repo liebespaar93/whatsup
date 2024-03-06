@@ -96,3 +96,12 @@ markdown snippet 설정 파일 생성
     "insertDateString.format": "YYYY-MM-DD\"T\"hh:mm:ss\"Z\""
 }
 ```
+
+### Trigger Suggest
+
+mac의 경우 한국어가 control + command 로 되어있기 때문에 트리거가 작동하지 않는다
+
+![Image](./assets/markdown_snippet_trigger.gif)
+
+```@command:editor.action.triggerSuggest```에 자동 완성 단축키들이 있다
+![Image](./assets/markdown_snippet_trigger.png)
