@@ -1,0 +1,21 @@
+---
+title: redux
+description: |-
+	내용입력
+date: Insert datetime string (⇧⌘I or Ctrl+Shift+I)
+preview: 이미지 주소
+draft: false
+tags:
+	- 테그없음
+categories:
+	- 카테고리없음
+---
+
+
+시나리오 redux 사용해야 하는 이유
+
+아바타 분리된 페이지의 데이터 실시간 공유
+
+redux Tutorial
+<https://usonkrap.github.io/2018/12/15/React-Redux-Tutorial-for-Beginners.html>
+

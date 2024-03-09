@@ -37,6 +37,10 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
+
+	//추가 정보
+  createdAt    DateTime @default(now()) @map ("created_at")
+  updatedAt    DateTime @updatedAt @map ("update_at")
 }
 
 model User {
@@ -51,9 +55,12 @@ model User {
 
   @@map("users")
 
-	// 유저 정보
-  userStateId   String?
-	userState     UserState? @relation(fields: [userStateId], references: [id])
+	// 추가 정보
+  createdAt    DateTime? @default(now())
+  updatedAt    DateTime? @updatedAt
+
+  nickname     String?
+	userState    UserState? @relation(fields: [nickname], references: [nickname])
 }
 
 model VerificationToken {
@@ -63,6 +70,12 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
+
+	// 추가 정보
+  id         String   @id @default(cuid())
+	email      String
+	createdAt  DateTime @default(now())
+	updatedAt  DateTime @updatedAt
 }
 
 model Authenticator {
@@ -80,8 +93,22 @@ model Authenticator {
 }
 
 model UserState {
-  id            String    @id @default(cuid())
+  id            String    @id @default(cuid()) @unique
   nickname      String		@unique
-  password      String
+	avatar        String?
+  devices       Device[]
   user          User[]
+}
+
+model Device {
+  id            Int         @id
+
+  deviceUID     String      @default(cuid()) @map("device_uid") @db.VarChar(64)
+
+  name          String?     @db.VarChar(80)
+  locationName  String?     @db.VarChar(200)
+  lastSeenAt    DateTime?
+
+  userStateID   String
+  userState     UserState     @relation(fields: [deviceUID], references: [id])
 }

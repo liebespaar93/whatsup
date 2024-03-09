@@ -10,7 +10,7 @@ function FormError(props: FormErrorProps) {
 		return (null);
 
 	return (
-		<div className="mt-2 bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive">
+		<div className="mt-4 bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive">
 			<GoAlert />
 			<p>{props.message}</p>
 		</div>

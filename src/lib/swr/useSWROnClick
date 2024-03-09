@@ -1,0 +1,21 @@
+import useSWR from 'swr'
+import axios from 'axios';
+
+const fetcher = (url: any, params: any) => axios.post(url).then(res => res.data)
+
+export const useUploadAvatar = (isTrigger: boolean, url: string, file: File) => {
+	const { data, isValidating, error } = useSWR(
+		[url, file],
+		isTrigger ? fetcher : null,
+		{
+			revalidateIfStale: false,
+			revalidateOnFocus: false,
+			revalidateOnReconnect: false
+		}
+	)
+	return {
+		data,
+		isLoading: isValidating,
+		error,
+	};
+};

@@ -79,3 +79,13 @@ npm install react-icons
 > 화려하게 꾸민 아이콘들이 있다 svg 형식 제공
 
 <https://iconscout.com/free-icon/google-160>
+
+## flowbite
+
+> [!NOTE]
+> 다양한 tailwind css 스타일을 예시본을 알려준다
+
+(https://flowbite.com/docs/getting-started/quickstart/)
+링크 : <https://flowbite.com/docs/getting-started/quickstart/>
+
+다양한 설정을 알려준다
